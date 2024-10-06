@@ -1,0 +1,11 @@
+{% extends 'store/base.html' %}
+{% block title %}Add/Edit Payment{% endblock %}
+{% block content %}
+<h2>{% if payment %}Edit Payment{% else %}Add New Payment{% endif %}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'payment_list' %}">Cancel</a>
+{% endblock %}

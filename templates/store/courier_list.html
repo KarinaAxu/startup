@@ -1,0 +1,11 @@
+{% extends 'store/base.html' %}
+{% block title %}Courier List{% endblock %}
+{% block content %}
+<h2>Courier List</h2>
+<ul>
+    {% for courier in couriers %}
+        <li><a href="{% url 'courier_detail' courier.pk %}">{{ courier.name }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'courier_create' %}">Add New Courier</a>
+{% endblock %}

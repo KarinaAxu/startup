@@ -1,0 +1,11 @@
+{% extends 'store/base.html' %}
+{% block title %}Payment List{% endblock %}
+{% block content %}
+<h2>Payment List</h2>
+<ul>
+    {% for payment in payments %}
+        <li><a href="{% url 'payment_detail' payment.pk %}">Payment #{{ payment.id }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'payment_create' %}">Add New Payment</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'store/base.html' %}
+{% block title %}Restaurant Detail{% endblock %}
+{% block content %}
+<h2>Restaurant Detail</h2>
+<p><strong>Name:</strong> {{ restaurant.name }}</p>
+<p><strong>Address:</strong> {{ restaurant.address }}</p>
+<a href="{% url 'restaurant_update' restaurant.pk %}">Edit</a>
+<a href="{% url 'restaurant_list' %}">Back to List</a>
+{% endblock %}

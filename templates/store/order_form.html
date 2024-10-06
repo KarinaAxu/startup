@@ -1,0 +1,11 @@
+{% extends 'store/base.html' %}
+{% block title %}Add/Edit Order{% endblock %}
+{% block content %}
+<h2>{% if order %}Edit Order{% else %}Add New Order{% endif %}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'order_list' %}">Cancel</a>
+{% endblock %}

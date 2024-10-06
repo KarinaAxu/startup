@@ -1,0 +1,10 @@
+{% extends 'store/base.html' %}
+{% block title %}Order Detail{% endblock %}
+{% block content %}
+<h2>Order Detail</h2>
+<p><strong>Order ID:</strong> {{ order.id }}</p>
+<p><strong>Customer:</strong> {{ order.customer }}</p>
+<p><strong>Total Amount:</strong> {{ order.total_amount }}</p>
+<a href="{% url 'order_update' order.pk %}">Edit</a>
+<a href="{% url 'order_list' %}">Back to List</a>
+{% endblock %}
