@@ -1,9 +1,0 @@
-{% extends 'store/../base.html' %}
-{% block title %}Dishes{% endblock %}
-{% block content %}
-    <h1>Блюдо</h1>
-    <p><strong>Name:</strong> {{ dish }}</p>
-    <p><strong>Price:</strong> {{ dish.price }}</p>
-    <a href="{% url 'dish_update' customer.pk %}">Edit</a>
-    <a href="{% url 'dishes' %}">Back to List</a>
-{% endblock %}

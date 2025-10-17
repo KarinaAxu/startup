@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit contract</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="bg-wrap"><canvas id="bgCanvas"></canvas></div>
+
+  <div class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn" onclick="window.location.href='Info Menu.html'">×</button>
+      <h2>Редактирование черновика</h2>
+
+      <table class="edit-table">
+        <thead>
+          <tr>
+            <th>Товар</th>
+            <th>Категория</th>
+            <th>Размер</th>
+            <th>Цена/день</th>
+            <th>Доступно</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody"></tbody>
+      </table>
+<br>
+      <button class="btn primary" id="saveBtn">Сохранить договор</button>
+    </div>
+  </div>
+
+  <script>
+    const products = [
+      { name: "Горные лыжи Rossignol", cat: "Активен", size: "170см", price: "1500 ₽", stock: "14" },
+      { name: "Сноуборд Burton", cat: "Ожидает", size: "158см", price: "2000 ₽", stock: "10" },
+      { name: "Шлем POC", cat: "Ожидает", size: "L", price: "400 ₽", stock: "25" },
+    ];
+
+    const tbody = document.getElementById("productTableBody");
+    products.forEach(p => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${p.name}</td><td>${p.cat}</td><td>${p.size}</td><td>${p.price}</td><td>${p.stock}</td>`;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("saveBtn").addEventListener("click", () => {
+      alert("Договор обновлён ✅");
+      window.location.href = "Info Menu.html";
+    });
+  </script>
+</body>
+</html>

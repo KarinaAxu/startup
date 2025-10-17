@@ -1,0 +1,51 @@
+import React from 'react';
+import '../style.css';
+export default function MainMenu(){
+  return (
+    <div className='page' dangerouslySetInnerHTML={{__html: `
+  <!-- Canvas background -->
+  <div class="bg-wrap" aria-hidden="true">
+    <canvas id="bgCanvas"></canvas>
+  </div>
+
+  <!-- Контент -->
+  <div class="left">
+    <div class="logo">
+    </div>
+    <div class="form-container">
+      <h2>Log in to your account</h2>
+
+      <a href="Login.html">
+      <button class="social-btn">Log in with Email</button>
+      </a>
+
+      <div class="divider">или</div>
+
+      <button class="social-btn">
+        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+        Log in with Google
+      </button>
+
+      <button class="social-btn">
+        <img src="https://www.svgrepo.com/show/354800/apple.svg" alt="Apple">
+        Log in with Apple ID
+      </button>
+
+      <button class="social-btn">
+        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook">
+        Log in with Facebook
+      </button>
+
+      <div class="create">
+        Don’t have an account? <a href="#" class="href">Create one</a>
+      </div>
+    </div>
+    <div class="info">
+      <span>Please review the site,</span>
+      <button class="info-btn">Terms & Documents</button>
+    </div>
+  </div>
+  <div class="right"></div>
+`}} />
+  );
+}

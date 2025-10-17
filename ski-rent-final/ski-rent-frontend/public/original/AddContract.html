@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Add contract</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="bg-wrap"><canvas id="bgCanvas"></canvas></div>
+
+  <div class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn" onclick="window.location.href='Info Menu.html'">×</button>
+      <h2>Создание нового договора</h2>
+
+      <form id="contractForm" onsubmit="redirectToDashboard(event)">
+        <label>ФИО клиента</label>
+        <input type="text" id="clientName" required>
+
+        <label>Телефон</label>
+        <input type="text" id="clientPhone" required>
+
+        <label>Дата начала аренды</label>
+        <input type="date" id="startDate" required>
+
+        <label>Дата окончания аренды</label>
+        <input type="date" id="endDate" required>
+        <a href="EditContract.html">
+                <button type="button" class="social-btn" id="addItemBtn">+ Добавить товар</button>
+        </a>
+        <button type="submit" class="btn">Создать договор</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("contractForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = {
+        client: document.getElementById("clientName").value,
+        phone: document.getElementById("clientPhone").value,
+        start: document.getElementById("startDate").value,
+        end: document.getElementById("endDate").value,
+        products: [],
+      };
+      const contracts = JSON.parse(localStorage.getItem("contracts") || "[]");
+      contracts.push(data);
+      localStorage.setItem("contracts", JSON.stringify(contracts));
+      alert("Договор успешно создан!");
+      window.location.href = "Info Menu.html";
+    });
+
+    document.getElementById("addItemBtn").addEventListener("click", () => {
+      alert("Открытие окна выбора товаров (пока демо)");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini CRM</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Canvas background -->
+  <div class="bg-wrap" aria-hidden="true">
+    <canvas id="bgCanvas"></canvas>
+  </div>
+
+  <!-- Content -->
+  <div class="left">
+    <div class="logo">
+    </div>
+    <div class="form">
+      <h2>Log in with your email</h2>
+      <form onsubmit="redirectToPassword(event)">
+      <div>
+        <label for="email">Email</label>
+        <br>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+<br>
+      <button type="submit" class="btn">Continue</button>
+      </form>
+    
+      <a href="Main Menu.html">
+      <button class="social-btn">Go back</button>
+      </a>
+
+    </div>
+
+    <div class="info">
+      <span>Please review the site,</span>
+      <button class="info-btn">Terms & Documents</button>
+    </div>
+  </div>
+  <div class="right"></div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+import React from 'react';
+import '../style.css';
+export default function InfoMenu(){
+  return (
+    <div className='page' dangerouslySetInnerHTML={{__html: `
+<div aria-hidden="true" class="bg-wrap">
+<canvas id="bgCanvas"></canvas>
+</div>
+<div class="sidebar">
+<div class="logo">
+</div>
+<nav class="nav">
+<a class="href" href="Info Menu.html"><div class="nav-item active">
+<img alt="Dashboard" height="24" src="https://www.svgrepo.com/show/392628/arrow-small-top-triangle-direction-navigation.svg" width="24"/>
+      Dashboard
+      </div>
+</a>
+<a class="href" href="Setting.html"><div class="nav-item">
+<img alt="Settings" height="24" src="https://www.svgrepo.com/show/392631/arrow-bottom-small-triangle-direction-navigation.svg" width="24"/>
+      Settings
+      </div>
+</a>
+</nav>
+</div>
+<div class="main">
+<header class="header">
+<h1>Dashboard</h1>
+<div class="header-buttons">
+<button class="btn primary" onclick="exportTable('products','name,category,size,price,stock'.split(','),'products.csv')">Export</button>
+<a href="AddContract.html">
+<button class="btn primary">+ New</button>
+</a>
+</div>
+</header>
+<main class="content">
+<div class="status-cards">
+<div class="status-card">
+<div class="status-value">124 вт</div>
+<div class="status-label">Время работы</div>
+</div>
+<div class="status-card">
+<div class="status-value">124 вт</div>
+<div class="status-label">Время без</div>
+</div>
+<div class="status-card">
+<div class="status-value">124 вт</div>
+<div class="status-label">Время всего</div>
+</div>
+</div>
+<section class="table-section">
+<div class="table-header">
+<h2 class="table-title">Длительность</h2>
+</div>
+<table>
+<thead>
+<tr>
+<th>Льгота</th>
+<th>Длительность</th>
+<th>Больнич</th>
+<th>Отпуск</th>
+<th>Больнич</th>
+<th>Длительность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Больнич:</td>
+<td>28 вт</td>
+<td>Больнич:</td>
+<td>20 вт</td>
+<td>Больнич:</td>
+<td>35 вт</td>
+</tr>
+<tr>
+<td>Больничн:</td>
+<td>28 вт</td>
+<td>Больничн:</td>
+<td>20 вт</td>
+<td>Больничн:</td>
+<td>25 вт</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="table-section">
+<div class="table-header">
+<h2 class="table-title">Список заказов</h2>
+</div>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>№ Заказа</th>
+<th>Клиент</th>
+<th>Телефон</th>
+<th>Сумма</th>
+<th>Статус</th>
+<th>Действия</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CO01</td>
+<td>Иван Петров</td>
+<td>+7 999 123-45-67</td>
+<td>01.05.2025-21.02.2025</td>
+<td>16 000 ₽</td>
+<td><span class="status-badge status-active">Активен</span></td>
+<td class="actions">
+<button class="action-btn action-edit">Ред.</button>
+<button class="action-btn action-delete">Удал.</button>
+</td>
+</tr>
+<tr>
+<td>CO02</td>
+<td>Мария Сидорова</td>
+<td>+7 999 234-56-78</td>
+<td>01.10.2025-01.07.2025</td>
+<td>23 000 ₽</td>
+<td><span class="status-badge status-pending">Ожидает</span></td>
+<td class="actions">
+<button class="action-btn action-edit">Ред.</button>
+<button class="action-btn action-delete">Удал.</button>
+</td>
+</tr>
+<tr>
+<td>CO03</td>
+<td>Елена Козлова</td>
+<td>7746789782</td>
+<td>07.07.2025-08.09.2025</td>
+<td>1500 ₽</td>
+<td><span class="status-badge status-active">Активен</span></td>
+<td class="actions">
+<button class="action-btn action-edit">Ред.</button>
+<button class="action-btn action-delete">Удал.</button>
+</td>
+</tr>
+<tr>
+<td>CO04</td>
+<td>Елена</td>
+<td>567896543</td>
+<td>14.04.2025-16.06.2025</td>
+<td>2300 ₽</td>
+<td><span class="status-badge status-pending">Ожидает</span></td>
+<td class="actions">
+<button class="action-btn action-edit">Ред.</button>
+<button class="action-btn action-delete">Удал.</button>
+</td>
+</tr>
+<tr>
+<td>CO05</td>
+<td>dfg</td>
+<td>45</td>
+<td>14.04.2025-16.06.2025</td>
+<td>800 ₽</td>
+<td><span class="status-badge status-active">Активен</span></td>
+<td class="actions">
+<button class="action-btn action-edit">Ред.</button>
+<button class="action-btn action-delete">Удал.</button>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</main>
+</div>
+`}} />
+  );
+}
